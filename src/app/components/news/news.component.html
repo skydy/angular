@@ -1,0 +1,11 @@
+<p *ngIf="true">我是一个新闻组件</p>
+<p>{{title}}</p>
+<div *ngFor="let item of arr;let iis=index;">
+    {{item}}---索引{{iis}}
+</div>
+<span *ngFor="let list of imgs">
+    <img [src]="list" alt="">
+</span>
+<button (click)="btn(123)">123</button>
+<input type="text" [(ngModel)]="binding">
+{{binding | homes}}
