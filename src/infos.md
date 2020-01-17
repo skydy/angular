@@ -5,3 +5,19 @@
 
 # ng g
     ng g component components/home          新建组件
+
+# storage.service
+    1.ng g service services/storage
+    2.app.module.ts  里面引入创建的服务 并且声明
+        引入服务
+        import { StorageService } from './services/storage.service'
+        配置声明服务
+        providers: [StorageService],
+    3.在用到的组件里面引入服务
+        引入服务
+        import { StorageService } from '../../services/storage.service'
+        初始化
+        constructor(public storage:StorageService) { 
+            console.log(this.storage.get())
+        }
+
