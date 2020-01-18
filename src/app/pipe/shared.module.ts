@@ -6,14 +6,14 @@ import { Homes } from './home.pipe';
 
 
 @NgModule({
-  declarations: [
-    Portrait,
-    Homes
-  ],
-  exports: [
-    Portrait,
-    Homes
-  ]
+    declarations: [
+        Portrait,
+        Homes
+    ],
+    exports: [
+        Portrait,
+        Homes
+    ]
 })
 export class SharedModule {
 

@@ -13,20 +13,25 @@ import { HomeComponent } from './components/home/home.component';
 // 引入管道文件
 import { SharedModule } from "./pipe/shared.module";
 //引入并且配置服务
-import { StorageService } from './services/storage.service'
+import { StorageService } from './services/storage.service';
+import { HeaderComponent } from './components/header/header.component';
+// 数据请求依赖模块
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
     // 配置当前项目运行的组件
     declarations: [
         AppComponent,
         NewsComponent,
-        HomeComponent
+        HomeComponent,
+        HeaderComponent
     ],
     // 配置当前模块运行依赖的其他模块
     imports: [
         BrowserModule,
         FormsModule,
-        SharedModule
+        SharedModule,
+        HttpClientModule
     ],
     // 配置项目所需要的服务
     providers: [StorageService],

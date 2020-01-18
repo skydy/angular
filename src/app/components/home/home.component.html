@@ -1,1 +1,6 @@
 <p>home主页!</p>
+<app-header #header [title]="title" [runHome]="run"></app-header>
+<div #myBox>
+    this is box
+</div>
+<button (click)="homeBtn()">调用子组件的方法</button>

@@ -5,6 +5,8 @@ import { StorageService } from '../../services/storage.service'
 // 不推荐
 // var storage =new StorageService();
 // console.log(storage)
+// 请求服务
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Component({
     selector: 'app-news',
@@ -17,15 +19,11 @@ export class NewsComponent implements OnInit {
     public arr:number[] = [111,222,333];
     public binding:string = "";
     public base:string;
-    public imgs:any[] = [
-        require("../../../assets/img/1.jpg"),
-        require("../../../assets/img/2.jpg"),
-        require("../../../assets/img/3.jpg"),
-        require("../../../assets/img/4.jpg"),
-        require("../../../assets/img/5.jpg"),
-        require("../../../assets/img/6.jpg")
-    ];
-    constructor(public storage:StorageService) { 
+
+    constructor(
+        public storage:StorageService,
+        public http:HttpClient
+        ){ 
         this.title = "这个是修改后的msg";
     }
     btn(e:number){
@@ -39,6 +37,29 @@ export class NewsComponent implements OnInit {
         console.log('this.storage.get("base")',this.storage.get("base"))
     }
     ngOnInit() {
-        
+        let streem = this.storage.getRxjsData()
+        /* 发布订阅 */
+        let d = streem.subscribe((data)=>{
+            console.log(data)
+        })
+        /* 取消订阅 */
+        setTimeout(()=>{
+            d.unsubscribe();
+        },1000)
+
+        // get请求
+        let api = 'http://a.itying.com/api/productlist'
+        this.http.get(api).subscribe(res=>{
+            console.log(res)
+        },
+        error=>{
+            console.log(error)
+        })
+        // post请求
+        // const httpOptions = {header:new HttpHeaders({"Content-Type": "application/json"})}
+        // let data={info:"info"}
+        // this.http.post(api,data,httpOptions).subscribe((res)=>{
+        //     console.log(res)
+        // })
     }
 }

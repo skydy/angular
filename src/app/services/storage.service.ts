@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { Observable } from 'rxjs'
+
 @Injectable({
     providedIn: 'root'
 })
@@ -17,4 +19,15 @@ export class StorageService {
     remove(key:string){
         localStorage.removeItem(key)
     }
+
+    getRxjsData(){
+        return new Observable((observer)=>{
+            setTimeout(()=>{
+                let user = "你好世界-Observable"
+                observer.next(user)
+                // observer.error('失败')
+            },2000)
+        })
+    }
+    
 }
