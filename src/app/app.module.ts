@@ -17,6 +17,7 @@ import { StorageService } from './services/storage.service';
 import { HeaderComponent } from './components/header/header.component';
 // 数据请求依赖模块
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     // 配置当前项目运行的组件
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
         BrowserModule,
         FormsModule,
         SharedModule,
-        HttpClientModule
+        HttpClientModule,
+        AppRoutingModule
     ],
     // 配置项目所需要的服务
     providers: [StorageService],
