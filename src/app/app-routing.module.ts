@@ -4,8 +4,6 @@ import { NewsComponent } from './components/news/news.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
-    
-    
     { path: 'NewsComponent', component: NewsComponent },
     { path: 'HomeComponent', component: HomeComponent },
     {

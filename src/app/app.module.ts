@@ -18,6 +18,7 @@ import { HeaderComponent } from './components/header/header.component';
 // 数据请求依赖模块
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 
 @NgModule({
     // 配置当前项目运行的组件
@@ -36,7 +37,11 @@ import { AppRoutingModule } from './app-routing.module';
         AppRoutingModule
     ],
     // 配置项目所需要的服务
-    providers: [StorageService],
+    providers: [
+        StorageService,
+        {provide: HashLocationStrategy, useClass: HashLocationStrategy}
+        // {provide: LocationStrategy, useClass: HashLocationStrategy}
+    ],
     // 指定应用的主视图(称为根组件)通过引导根AppModule来启动应用，这里一般写的是根组件
     bootstrap: [AppComponent]
 })

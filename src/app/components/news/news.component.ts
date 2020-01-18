@@ -7,6 +7,7 @@ import { StorageService } from '../../services/storage.service'
 // console.log(storage)
 // 请求服务
 import { HttpClient,HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute } from '@angular/router'
 
 @Component({
     selector: 'app-news',
@@ -22,7 +23,8 @@ export class NewsComponent implements OnInit {
 
     constructor(
         public storage:StorageService,
-        public http:HttpClient
+        public http:HttpClient,
+        public route:ActivatedRoute
         ){ 
         this.title = "这个是修改后的msg";
     }
@@ -61,5 +63,9 @@ export class NewsComponent implements OnInit {
         // this.http.post(api,data,httpOptions).subscribe((res)=>{
         //     console.log(res)
         // })
+        // 获取路由传值
+        this.route.queryParams.subscribe((data)=>{
+            console.log('路由值为：',data);
+        })
     }
 }

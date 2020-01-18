@@ -1,7 +1,7 @@
 <!-- <app-news></app-news>
 <app-home></app-home> -->
-<span routerLink='NewsComponent' routerLinkActive='active'>NewsComponent</span>
+<span routerLink='NewsComponent' [queryParams]="{id:'NewsComponent'}"  routerLinkActive='active'>NewsComponent</span>
 <span>-----------------</span>
-<span routerLink='HomeComponent' routerLinkActive='active'>HomeComponent</span>
+<span routerLink='HomeComponent' [queryParams]="{id:'HomeComponent'}"  routerLinkActive='active'>HomeComponent</span>
 <hr/>
 <router-outlet><router-outlet>
