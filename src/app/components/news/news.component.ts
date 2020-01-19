@@ -58,7 +58,7 @@ export class NewsComponent implements OnInit {
             console.log(error)
         })
         // post请求
-        // const httpOptions = {header:new HttpHeaders({"Content-Type": "application/json"})}
+        const httpOptions = {header:new HttpHeaders({"Content-Type": "application/json"})}
         // let data={info:"info"}
         // this.http.post(api,data,httpOptions).subscribe((res)=>{
         //     console.log(res)

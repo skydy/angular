@@ -33,3 +33,22 @@
         @ViewChild('myBox',{static:true}) myBox:any;
     4.ngAfterViewInit生命周期函数里面获取dom
         this.myBox.nativeElement
+
+# 跳转路由
+    1.动态路由
+        1.引入声明模块
+            import { Router } from '@angular/router'
+            constructor(public router:router){}
+        2.跳转
+            this.router.navigate(['/home'])
+            this.router.navigate(['/news'],'123')
+    2.get传值
+        1.引入声明模块
+            import { Router } from '@angular/router'
+            constructor(public router:router){}
+        2.跳转
+            this.router.navigate(['/news'],{
+                queryParams:{
+                    id:'666'
+                }
+            })

@@ -19,6 +19,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import {HashLocationStrategy, LocationStrategy} from '@angular/common';
+import { UsersComponent } from './module/users/users.component';
+// 引入自定义模块
+import { UsersModule } from './module/users/users.module';
 
 @NgModule({
     // 配置当前项目运行的组件
@@ -26,7 +29,8 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
         AppComponent,
         NewsComponent,
         HomeComponent,
-        HeaderComponent
+        HeaderComponent,
+        UsersComponent
     ],
     // 配置当前模块运行依赖的其他模块
     imports: [
@@ -34,7 +38,8 @@ import {HashLocationStrategy, LocationStrategy} from '@angular/common';
         FormsModule,
         SharedModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
+        UsersModule
     ],
     // 配置项目所需要的服务
     providers: [
