@@ -30,7 +30,7 @@ import { UsersModule } from './module/users/users.module';
         NewsComponent,
         HomeComponent,
         HeaderComponent,
-        UsersComponent
+        UsersComponent,
     ],
     // 配置当前模块运行依赖的其他模块
     imports: [
